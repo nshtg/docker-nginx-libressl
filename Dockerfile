@@ -86,7 +86,7 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
     && curl -fSL https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl.asc -o libressl.asc \
     && gpg --import libressl.asc \
     && gpg --batch --verify libressl.tar.gz.asc libressl.tar.gz \
-    && rm -r "$GNUPGHOME" nginx.tar.gz.asc libressl.tar.gz.asc libressl.asc \
+    && rm -rf "$GNUPGHOME" nginx.tar.gz.asc libressl.tar.gz.asc libressl.asc \
     && mkdir -p /usr/src \
     && tar -zxC /usr/src -f nginx.tar.gz \
     && rm nginx.tar.gz \
